@@ -75,23 +75,18 @@ class Puzzle:
             if [row-1, col] == self.empty_space:
                 self.puzzle[row-1][col] = self.puzzle[row][col]
                 self.puzzle[row][col] = self.width*self.height-1
-                self.empty_space[0] = row
-                self.empty_space[1] = col
             if [row+1, col] == self.empty_space:
                 self.puzzle[row+1][col] = self.puzzle[row][col]
                 self.puzzle[row][col] = self.width*self.height-1
-                self.empty_space[0] = row
-                self.empty_space[1] = col
             if [row, col-1] == self.empty_space:
                 self.puzzle[row][col-1] = self.puzzle[row][col]
                 self.puzzle[row][col] = self.width*self.height-1
-                self.empty_space[0] = row
-                self.empty_space[1] = col
             if [row, col+1] == self.empty_space:
                 self.puzzle[row][col+1] = self.puzzle[row][col]
                 self.puzzle[row][col] = self.width*self.height-1
-                self.empty_space[0] = row
-                self.empty_space[1] = col
+
+            self.empty_space[0] = row
+            self.empty_space[1] = col
 
             if self.puzzle == self.solved:
                 print("You have solved the puzzle!!!")
